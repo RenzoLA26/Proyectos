@@ -36,7 +36,7 @@ Habla a ~130 palabras por minuto. Los tiempos son referenciales; cada diapositiv
 
 ## Diapositiva 1 – Portada (0:40)
 
-Buenos días/tardes. Mi nombre es Renzo Luna, estudiante de décimo ciclo de Ingeniería Biomédica, y hoy les presento el avance de mi proyecto de tesis, asesorado por Pedro Crisostomo.
+Buenos tardes a todos. Mi nombre es Renzo Luna, estudiante de 9° ciclo de Ingeniería Biomédica, y hoy les presento el avance de mi proyecto de tesis, asesorado por el ingeniero Pedro Crisostomo.
 
 El proyecto se titula: *Diseño de un sistema de apoyo basado en deep learning para la detección de patrones de neumonía mediante sonidos respiratorios y radiografías de tórax en zonas rurales*.
 
@@ -46,13 +46,13 @@ En los próximos minutos les voy a contar por qué este problema importa, qué s
 
 ## Diapositiva 2 – Índice (0:20)
 
-La presentación sigue esta estructura: primero la introducción, luego la pregunta de investigación y los objetivos, después el marco teórico y el estado del arte, y finalmente la metodología, donde voy a mostrar mi avance. Cierro con las referencias.
+La presentación sigue esta estructura: primero la introducción, luego la pregunta de investigación y los objetivos, después el marco teórico y el estado del arte, y finalmente la metodología, donde voy a mostrar mi avance.
 
 ---
 
 ## Diapositiva 3 – Introducción: mortalidad global (1:15)
 
-Empiezo con una definición. La neumonía es una infección pulmonar causada por microorganismos. Además de la infección en sí, puede desencadenar comorbilidades crónicas y un deterioro cognitivo importante, y puede progresar a complicaciones potencialmente mortales.
+Para empezar contare el contexto del problema. La neumonía es una infección pulmonar causada por múltiples microorganismos. Cuando el agente patógeno llega al sistema respiratorio, se activan mecanismos anatómicos e inmunológicos que comúnmente protegen a la vía aérea. Sin embargo, ciertas condiciones pueden alterar la funcionalidad normal del sistema permitiendo que los microorganismos se ubiquen en la superficie alveolar iniciando la infección pulmonar. Además de la infección en sí, puede desencadenar comorbilidades crónicas y un deterioro cognitivo importante, y puede progresar a complicaciones potencialmente mortales.
 
 A nivel global, según el estudio GBD 2023, la neumonía causó **2.5 millones de muertes** en 2023. Y lo que más pesa es que se concentra en los extremos de la vida: **610 mil muertes en menores de 5 años** y **1.2 millones en mayores de 70 años**. Por eso mi proyecto se enfoca en población pediátrica y geriátrica.
 
@@ -64,17 +64,17 @@ Y hay factores que empeoran el riesgo: la contaminación del aire y la baja conc
 
 ## Diapositiva 4 – Introducción: situación en Perú y brecha rural (1:30)
 
-Pasando al Perú. En el periodo reportado hubo **84,448 casos** y **2,320 muertes**. Fíjense cómo se distribuye: en menores de 5 años, 24.67% de incidencia y 107 muertes; en mayores de 60 años, **37.67% de incidencia y 1,884 muertes**. El grueso de las muertes está en adultos mayores, pero los niños también son un grupo crítico.
+Pasando al Perú. Hasta la semana 38 del presente año se ha reportado que hubo **84,448 casos** y **2,320 muertes**. Fíjense cómo se distribuye: en menores de 5 años, 24.67% de incidencia y 107 muertes; en mayores de 60 años, **37.67% de incidencia y 1,884 muertes**. El grueso de las muertes está en adultos mayores, pero los niños también son un grupo crítico.
 
 Ahora, ¿por qué las zonas rurales? Porque ahí se junta una brecha de tres tipos.
 
-Primero, **riesgo**: el descenso de cobertura de vacunas se asoció a 75 muertes en menores de cinco años hasta junio de 2024, y esto se agrava en zonas altoandinas y amazónicas.
+Primero, hay un **riesgo de incidencia y mortalidad**: hubo un descenso de cobertura de vacunas y que se asoció a 75 muertes en menores de cinco años hasta junio de 2024, y esto se agrava en zonas altoandinas y amazónicas.
 
-Segundo, **personal médico**: hay 17.9 médicos por cada 10 mil habitantes y solo 1 tecnólogo radiológico por cada 16.6 mil habitantes. Además, el 76% de los establecimientos reporta problemas de capacitación en el manejo de equipos, específicamente estetoscopio y rayos X.
+Segundo, **por la situacion del personal médico aqui en el pais**: ya que hay 17.9 médicos por cada 10 mil habitantes y solo 1 tecnólogo radiológico por cada 16.6 mil habitantes. Además, en los establecimientos de primer nivel de atención, categoría que más abunda en zonas rurales, el 76% de los establecimientos reporta problemas de capacitación en el manejo de equipos, incluidos el manejo de estetoscopio digital y rayos X.
 
-Tercero, **dispositivos médicos**: hay problemas de conectividad y acceso limitado a equipos de auscultación.
+Tercero, **problemas en los dispositivos médicos**: hay problemas de conectividad de los equipos y acceso limitado a equipos de auscultación.
 
-De aquí sale la necesidad: una herramienta confiable que interprete con alta precisión los patrones acústicos y radiográficos asociados a la neumonía. Y mi propuesta de solución es un sistema basado en deep learning.
+De aquí sale una necesidad: se identifica la necesidad de contar con una herramienta confiable que interprete con alta precisión los patrones acústicos y radiográficos asociados a la neumonía. Y mi propuesta de solución es un sistema de apoyo basado en deep learning.
 
 ---
 
@@ -92,11 +92,11 @@ Quiero resaltar dos palabras: **modelos independientes**, porque un modelo proce
 
 El **objetivo general** es diseñar y validar un sistema de apoyo basado en deep learning para detectar patrones asociados a neumonía, que integre el análisis de sonidos auscultatorios y de radiografía de tórax, enfocado en pacientes pediátricos y geriátricos de zonas rurales con acceso limitado a servicios de salud especializados.
 
-Para lograrlo, planteo cinco **objetivos específicos** que siguen el orden natural del proyecto:
+Para lograrlo, planteo 6 **objetivos específicos** que siguen el orden natural del proyecto:
 
 1. Realizar el estudio bibliográfico de la problemática, que es lo que estoy cerrando en esta etapa.
 2. Establecer los requerimientos del sistema para el análisis de sonidos y radiografía.
-3. Seleccionar datasets confiables, considerando la población etaria a evaluar.
+3. Seleccionar datasets confiables de sonidos respiratorios y radiografías de tórax con neumonía, considerando la población etaria a evaluar.
 4. Desarrollar el modelo de deep learning para detectar los patrones acústicos y radiográficos.
 5. Diseñar un esquema de fusión de las salidas de ambos modelos e implementarlo en una plataforma que funcione con conectividad inestable y que pueda usar personal de salud no especializado.
 6. Y finalmente validar el desempeño con métricas de clasificación.
@@ -107,21 +107,22 @@ Hoy les voy a mostrar principalmente avance en los tres primeros.
 
 ## Diapositiva 7 – Marco teórico: neumonía adquirida en la comunidad y pruebas de diagnóstico (1:15)
 
-Entrando al marco teórico. Me enfoco en la **neumonía adquirida en la comunidad**, que es el tipo más común y se adquiere fuera del entorno hospitalario. Los agentes invaden y proliferan en el parénquima pulmonar, generan una respuesta inflamatoria y esto favorece la acumulación de exudado en los alvéolos, que es justamente lo que luego vamos a "ver" en la radiografía y a "escuchar" en la auscultación.
+Entrando al marco teórico. Me enfoco en la **neumonía adquirida en la comunidad**, que es el tipo más común y se adquiere fuera del entorno hospitalario. El mecanismo de accion de esta infeccion es que los agentes invaden y proliferan en el parénquima pulmonar, generan una respuesta inflamatoria y esto favorece la acumulación de exudado en los alvéolos, que es justamente lo que luego vamos a "ver" en la radiografía y a "escuchar" en la auscultación.
 
 Por agente causal: las **bacterias** explican entre 60 y 70% de los casos, con *Streptococcus pneumoniae*, *Haemophilus influenzae*, *Mycoplasma pneumoniae* y *Staphylococcus aureus*. Los **virus** explican entre 30 y 40%, con VRS, metapneumovirus, rinovirus e influenza. Y los **hongos** son menos del 1.2%.
 
-A la derecha, las pruebas de diagnóstico: radiografía, auscultación, ecografía, tomografía y estudios microbiológicos. Resalté en negrita la **radiografía de tórax** y la **auscultación pulmonar** porque son las dos que uso en mi proyecto: son las más accesibles en un primer nivel de atención, a diferencia de la tomografía o los estudios microbiológicos.
+A la derecha, las pruebas de diagnóstico: radiografía, auscultación, ecografía, tomografía y estudios microbiológicos. Resalté en negrita la **radiografía de tórax** y la **auscultación pulmonar** porque son las dos que uso en mi proyecto: son las más accesibles en un nivel de atención basico, a diferencia de la tomografía o los estudios microbiológicos.
 
 ---
 
 ## Diapositiva 8 – Marco teórico: sonidos adventicios (1:15)
+Ahora pasare a explicar el marco teórico y es importante mencionarlo ya que aporta a conocer la base conceptual y teórico de mi proyecto de tesis.
 
-Pasemos al audio. Los **sonidos adventicios** son sonidos anormales que se escuchan durante la auscultación pulmonar. Hay tres principales.
+En los sonidos respiratorios. Los **sonidos adventicios** son sonidos anormales que se escuchan durante la auscultación pulmonar. Hay tres principales.
 
 Las **sibilancias** son sonidos continuos, agudos y musicales. Se producen cuando el aire pasa por vías aéreas muy estrechas u obstruidas, y su frecuencia suele estar por encima de 100 Hz, pudiendo llegar a 1200 Hz o más.
 
-Los **roncus** son continuos pero graves, parecidos a un ronquido. Se deben a obstrucción o secreciones en las vías aéreas grandes, y están generalmente por debajo de 200 Hz.
+Los **roncus** son continuos pero graves, parecidos a un ronquido. Estas de deben a obstrucción o secreciones en las vías aéreas grandes, y están generalmente por debajo de 200 Hz.
 
 Los **crepitantes** son discontinuos y cortos, como burbujeo o velcro. Aparecen por la apertura brusca de vías aéreas colapsadas o por líquido en los alvéolos. Los finos están entre 650 y 1000 Hz; los gruesos suelen estar por debajo de 350 Hz.
 
@@ -131,13 +132,15 @@ Los **crepitantes** son discontinuos y cortos, como burbujeo o velcro. Aparecen 
 
 ## Diapositiva 9 – Marco teórico: comparación de hallazgos auscultatorios (1:00)
 
-Aquí comparo un pulmón sano con uno con neumonía, usando los cuatro componentes de la exploración física.
+Aquí comparo un pulmón sano con uno con neumonía, usando los cuatro componentes de la exploración física, llamados hallazgos.
+
+Un **hallazgo auscultatorio** es un dato que el examinador obtiene mediante la exploración física y aporta información del parénquima pulmonar mediante la ascultación.
 
 En el **sonido respiratorio de base**, el pulmón sano tiene murmullo vesicular, de baja intensidad y tono grave. En neumonía hay respiración bronquial sobre la zona consolidada: más intensa y de tono más agudo.
 
 En los **sonidos adventicios**, el pulmón sano no tiene; en neumonía aparecen sobre todo crepitantes finos inspiratorios localizados en la zona afectada, y a veces sibilancias o roncus.
 
-En **frémito y resonancia vocal**, en neumonía el frémito está aumentado, con egofonía y broncofonía positivas. Y en la **percusión**, hay matidez sobre la consolidación.
+En **frémito y resonancia vocal**, en neumonía el frémito está aumentado, con egofonía y broncofonía positivas. Y en la **percusión**, hay matidez sobre la consolidación (la matidez es el sonido sordo, débil y de breve duración que se percibe al realizar una percusión) 
 
 Lo importante: de estos cuatro hallazgos, el que el audio de un estetoscopio puede capturar es el de los sonidos, y de ahí sale la información que alimenta al modelo de audio.
 
@@ -145,7 +148,7 @@ Lo importante: de estos cuatro hallazgos, el que el audio de un estetoscopio pue
 
 ## Diapositiva 10 – Marco teórico: hallazgos radiográficos (1:15)
 
-Ahora la parte de imagen. Un hallazgo radiográfico es un patrón visual que puede describirse, medirse y cuantificarse de manera automática, y eso es lo que lo hace candidato para deep learning.
+Ahora la parte radiografica. Un hallazgo radiográfico es un patrón visual que puede describirse, medirse y cuantificarse de manera automática, y eso es lo que lo hace candidato para deep learning.
 
 Los principales son:
 
@@ -170,7 +173,7 @@ Estas imágenes también muestran la dificultad del problema: el patrón no siem
 
 Esta diapositiva conecta dos ideas.
 
-A la izquierda, la **pirámide de establecimientos de salud**: primer, segundo y tercer nivel. Mi proyecto apunta al **primer nivel**, resaltado en rojo en el nivel I-4, que es donde está la población rural y donde faltan especialistas y equipos. *(Completa aquí tu justificación de por qué I-4, si la tienes.)*
+A la izquierda, la **pirámide de establecimientos de salud**: primer, segundo y tercer nivel. Mi proyecto apunta al **primer nivel**, resaltado en rojo en el nivel I-4, que es donde está la población rural y donde faltan especialistas y equipos. Por lo que el nivel de atención a la cual se quiere llegar para "apoyar" al personal de salud es el I-4 ya que es el tipo de establecimiento de salud de nivel mínimo de atención que tienen evaluación médica, instrumentación de auscultación de ruidos respiratorios y servicio de radiografía   *(Completa aquí tu justificación de por qué I-4, si la tienes.)*
 
 A la derecha, el marco de **inteligencia artificial**. El procesamiento de datos tiene cuatro etapas: dataset, preprocesamiento, **extracción de características** y división de datos. Resalté la extracción de características porque es donde ambos tipos de dato se transforman.
 
@@ -182,11 +185,11 @@ Para **sonidos respiratorios**, las técnicas más usadas son coeficientes cepst
 
 Pasemos al estado del arte, empezando por los sistemas basados en sonidos respiratorios. Primero los comerciales, que muestran que esta idea ya es viable.
 
-**ResApp Dx** es una aplicación móvil que usa machine learning sobre el sonido de la tos para distinguir entre neumonía, asma, bronquitis y bronquiolitis.
+**ResApp Dx** es una aplicación móvil que usa machine learning sobre el sonido de la tos para distinguir entre neumonía, asma, bronquitis y bronquiolitis. La plataforma se fundamenta en aplicaciones de machine learning desarrollados en la Universidad de Queensland y su metodología se basa en la segmentación de las toses, en el cual se extrae características acústicas y se clasifica gracias a un modelo entrenado, reportando una sensibilidad de 94% y especificidad de 75%.
 
-**TytoCare** combina un dispositivo portátil con una plataforma de IA para auscultación pulmonar, detectando crepitantes, sibilancias y roncus. Reporta un AUC de 95.85% con 1.8 millones de grabaciones. Además, ya se comercializa en Perú, como figura en mi bibliografía.
+**TytoCare** combina un dispositivo portátil con una plataforma de IA para auscultación pulmonar, detectando crepitantes, sibilancias y roncus. La plataforma tiene integrado algoritmos de aprendizaje automatico integrados para procesar las señales acústicas en tiempo real, sobre todo sonidos adventicios más relevantes en enfermedades respiratorias como sibilancias, crepitantes y roncus; por medio del estetoscopio digital. Sus algoritmos de aprendizaje automático fueron entrenados y validados por neumólogos y se reporto un AUC de 95.85% con 1.8 millones de grabaciones. Además, ya se comercializa en Perú, como figura en mi bibliografía.
 
-**Stethome AI** usa un estetoscopio digital conectado al celular, con una red neuronal convolucional que analiza el espectrograma y entrega probabilidades por tipo de sonido, y cuenta con certificación CE.
+**Stethome AI** usa un estetoscopio digital conectado al celular, con una red neuronal convolucional que analiza el espectrograma y entrega probabilidades por tipo de sonido adventicio, ya sea sibilancias, roncus, crepitantes finos y gruesos, y cuenta con certificación CE.
 
 La lección: la tecnología existe, pero son soluciones propietarias y de costo, y no necesariamente adaptadas a las condiciones rurales del Perú.
 
@@ -198,7 +201,7 @@ Ahora lo académico, donde está la parte más cercana a mi propuesta.
 
 **DeepBreath (Heitmann et al., 2023)**: un estudio multicéntrico, con datos de Brasil y Suiza y validación externa en África, en población pediátrica. Recolectan 8 sitios torácicos por paciente, preprocesan con filtro pasa-banda, log-mel y aumento de datos, clasifican con una CNN, agregan los resultados por sitio y predicen por paciente con regresión logística. Para neumonía alcanzan un **AUC-ROC de 0.75 interno y 0.74 externo**. Es un buen ejemplo de validación externa, pero el desempeño es moderado.
 
-**Hoekstra (2025)**: usa estetoscopio digital y un algoritmo de IA que clasifica sonidos como normales o anormales. Logra sensibilidad de 80.3% por posición y 87.2% por paciente, pero tiene una limitación: **no distingue entre sibilancias y crepitantes**.
+**Hoekstra (2025)**: usa estetoscopio digital y un algoritmo de IA que clasifica sonidos como normales o anormales mediante la extracción de grabaciones. Logra sensibilidad de 80.3% por posición y 87.2% por paciente, pero tiene una limitación: **no distingue entre sibilancias y crepitantes**.
 
 **Vidhya et al. (2022)**: graban audio, lo limpian con Audacity, extraen 13 coeficientes MFCC, normalizan y clasifican con Gradient Boosting, alcanzando **97% de precisión**. Es un resultado alto, pero con un modelo clásico y un conjunto de datos más controlado.
 
@@ -210,11 +213,11 @@ Lo que me llevo: los resultados en entornos más realistas son más modestos que
 
 En radiografía, los sistemas comerciales están más maduros.
 
-**qXR de Qure.ai** combina CNN con procesamiento de lenguaje natural para generar informes, detecta consolidación, opacidad y nódulos, con sensibilidad de 91% y especificidad de 84%.
+**qXR de Qure.ai** combina CNN de extremo a extremo con procesamiento de lenguaje natural para generar informes, detecta consolidación, opacidad y nódulos, con sensibilidad de 91% y especificidad de 84%. Aquí en el Perú se realizo una investigación con esta app móvil. En el año 2023, se realizaron pruebas en hospitales de alta complejidad de Lima, en pacientes hospitalizados por tuberculosis, en el cual demostró una alta sensibilidad del 91%, pero con una especificidad baja del 32% 
 
-**Insight CXR de Lunit** procesa una imagen en 10 segundos, detecta 11 hallazgos, con AUC de 0.923, sensibilidad de 95.4% y especificidad de 66%.
+**Insight CXR de Lunit** Es un software de detección asistida hecho en Corea del Sur con la finalidad de apoyar a los médicos en la interpretación de radiografías de tórax y este procesa una imagen en 10 segundos, detectando 11 hallazgos, con AUC de 0.923, sensibilidad de 95.4% y especificidad de 66%. Si encuentra anomalías con precisión las zonas involucradas resaltando estas anomalías en los mapas de calor o contornos de color.
 
-**Med-Chest X-ray de Vuno** detecta cinco hallazgos principales, entre ellos consolidación y derrame pleural, y se presenta explícitamente como apoyo al diagnóstico, que no reemplaza al médico, que es el mismo enfoque que adopto.
+**Med-Chest X-ray de Vuno** Es un software creado en Corea del Sur diseñado para apoyar el diagnóstico de enfermedades pulmonares importantes como cáncer de pulmón, tuberculosis y neumonía basado en detectar cinco hallazgos principales, entre ellos consolidación y derrame pleural, y se presenta explícitamente como apoyo al diagnóstico, que no reemplaza al médico, que es el mismo enfoque que adopto.
 
 ---
 
