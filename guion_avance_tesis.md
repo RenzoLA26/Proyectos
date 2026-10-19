@@ -40,7 +40,7 @@ Buenos tardes a todos. Mi nombre es Renzo Luna, estudiante de 9° ciclo de Ingen
 
 El proyecto se titula: *Diseño de un sistema de apoyo basado en deep learning para la detección de patrones de neumonía mediante sonidos respiratorios y radiografías de tórax en zonas rurales*.
 
-En los próximos minutos les voy a contar por qué este problema importa, qué se ha hecho en el mundo para resolverlo, y cuál es la metodología que propongo y en qué punto me encuentro.
+En los próximos minutos les voy a contar la problematica, qué se ha hecho en el mundo para resolverlo, y cuál es la metodología que propongo y en qué punto me encuentro actualmente.
 
 ---
 
@@ -52,11 +52,11 @@ La presentación sigue esta estructura: primero la introducción, luego la pregu
 
 ## Diapositiva 3 – Introducción: mortalidad global (1:15)
 
-Para empezar contare el contexto del problema. La neumonía es una infección pulmonar causada por múltiples microorganismos. Cuando el agente patógeno llega al sistema respiratorio, se activan mecanismos anatómicos e inmunológicos que comúnmente protegen a la vía aérea. Sin embargo, ciertas condiciones pueden alterar la funcionalidad normal del sistema permitiendo que los microorganismos se ubiquen en la superficie alveolar iniciando la infección pulmonar. Además de la infección en sí, puede desencadenar comorbilidades crónicas y un deterioro cognitivo importante, y puede progresar a complicaciones potencialmente mortales.
+Para empezar contare el contexto del problema. La neumonía es una infección pulmonar causada por múltiples microorganismos. La fisiopatologia empieza cuando el agente patógeno llega al sistema respiratorio, se activan mecanismos anatómicos e inmunológicos que comúnmente protegen a la vía aérea. Sin embargo, ciertas condiciones pueden alterar la funcionalidad normal del sistema permitiendo que los microorganismos se ubiquen en la superficie alveolar iniciando la infección pulmonar. Además de la infección en sí, puede desencadenar comorbilidades crónicas y un deterioro cognitivo importante, y puede progresar a complicaciones potencialmente mortales.
 
 A nivel global, según el estudio GBD 2023, la neumonía causó **2.5 millones de muertes** en 2023. Y lo que más pesa es que se concentra en los extremos de la vida: **610 mil muertes en menores de 5 años** y **1.2 millones en mayores de 70 años**. Por eso mi proyecto se enfoca en población pediátrica y geriátrica.
 
-Si miramos las tasas de mortalidad según IHME, vemos valores de 50.2 por cada 100 mil habitantes en África y 47.9 en Sudamérica. Es decir, nuestra región no está lejos de las zonas más afectadas del mundo.
+Si miramos las tasas de mortalidad según IHME, vemos valores de 50.2 por cada 100 mil habitantes en África y 47.9 en Sudamérica. Es decir, nuestra región es el 2do continente más afectada del mundo.
 
 Y hay factores que empeoran el riesgo: la contaminación del aire y la baja concientización sobre la vacunación.
 
@@ -66,11 +66,11 @@ Y hay factores que empeoran el riesgo: la contaminación del aire y la baja conc
 
 Pasando al Perú. Hasta la semana 38 del presente año se ha reportado que hubo **84,448 casos** y **2,320 muertes**. Fíjense cómo se distribuye: en menores de 5 años, 24.67% de incidencia y 107 muertes; en mayores de 60 años, **37.67% de incidencia y 1,884 muertes**. El grueso de las muertes está en adultos mayores, pero los niños también son un grupo crítico.
 
-Ahora, ¿por qué las zonas rurales? Porque ahí se junta una brecha de tres tipos.
+Ahora, ¿por qué las zonas rurales hay mayor problema? Porque ahí se junta una brecha de tres tipos.
 
 Primero, hay un **riesgo de incidencia y mortalidad**: hubo un descenso de cobertura de vacunas y que se asoció a 75 muertes en menores de cinco años hasta junio de 2024, y esto se agrava en zonas altoandinas y amazónicas.
 
-Segundo, **por la situacion del personal médico aqui en el pais**: ya que hay 17.9 médicos por cada 10 mil habitantes y solo 1 tecnólogo radiológico por cada 16.6 mil habitantes. Además, en los establecimientos de primer nivel de atención, categoría que más abunda en zonas rurales, el 76% de los establecimientos reporta problemas de capacitación en el manejo de equipos, incluidos el manejo de estetoscopio digital y rayos X.
+Segundo, **por la situacion del personal médico aqui en el pais**: ya que hay 17.9 médicos por cada 10 mil habitantes y solo 1 tecnólogo radiológo por cada 16.6 mil habitantes. Además, en los establecimientos de primer nivel de atención, categoría que más abunda en zonas rurales, el 76% de los establecimientos reporta problemas de capacitación en el manejo de equipos, incluidos el manejo de estetoscopio digital y rayos X.
 
 Tercero, **problemas en los dispositivos médicos**: hay problemas de conectividad de los equipos y acceso limitado a equipos de auscultación.
 
@@ -107,26 +107,25 @@ Hoy les voy a mostrar principalmente avance en los tres primeros.
 
 ## Diapositiva 7 – Marco teórico: neumonía adquirida en la comunidad y pruebas de diagnóstico (1:15)
 
-Entrando al marco teórico. Me enfoco en la **neumonía adquirida en la comunidad**, que es el tipo más común y se adquiere fuera del entorno hospitalario. El mecanismo de accion de esta infeccion es que los agentes invaden y proliferan en el parénquima pulmonar, generan una respuesta inflamatoria y esto favorece la acumulación de exudado en los alvéolos, que es justamente lo que luego vamos a "ver" en la radiografía y a "escuchar" en la auscultación.
+Ahora pasare a explicar el marco teórico y es importante mencionarlo ya que aporta a conocer la base conceptual y teórico de mi proyecto de tesis.
+Me enfoco en la **neumonía adquirida en la comunidad**, que es el tipo más común y se adquiere fuera del entorno hospitalario. El mecanismo de accion de esta infeccion es que los agentes invaden y proliferan en el parénquima pulmonar, generan una respuesta inflamatoria y esto favorece la acumulación de exudado en los alvéolos, que es justamente lo que luego vamos a "ver" en la radiografía y a "escuchar" en la auscultación.
 
-Por agente causal: las **bacterias** explican entre 60 y 70% de los casos, con *Streptococcus pneumoniae*, *Haemophilus influenzae*, *Mycoplasma pneumoniae* y *Staphylococcus aureus*. Los **virus** explican entre 30 y 40%, con VRS, metapneumovirus, rinovirus e influenza. Y los **hongos** son menos del 1.2%.
+Por agente causal: las **bacterias** que causan entre 60 y 70% de los casos, con *Streptococcus pneumoniae*, *Haemophilus influenzae*, *Mycoplasma pneumoniae* y *Staphylococcus aureus*. Los **virus** que causan entre 30 y 40%, con VRS, metapneumovirus, rinovirus e influenza. Y los **hongos** son menos del 1.2%. Debido a que causa fungica concentra un margen demasiado pequeño, y que no esta presente en los dataset, se va a trabajar con las causas bacterianas y virales 
 
 A la derecha, las pruebas de diagnóstico: radiografía, auscultación, ecografía, tomografía y estudios microbiológicos. Resalté en negrita la **radiografía de tórax** y la **auscultación pulmonar** porque son las dos que uso en mi proyecto: son las más accesibles en un nivel de atención basico, a diferencia de la tomografía o los estudios microbiológicos.
 
 ---
 
 ## Diapositiva 8 – Marco teórico: sonidos adventicios (1:15)
-Ahora pasare a explicar el marco teórico y es importante mencionarlo ya que aporta a conocer la base conceptual y teórico de mi proyecto de tesis.
-
-En los sonidos respiratorios. Los **sonidos adventicios** son sonidos anormales que se escuchan durante la auscultación pulmonar. Hay tres principales.
+Ahora pasare a explicar que son los **sonidos adventicios**, que son sonidos anormales que se escuchan durante la auscultación pulmonar. Hay tres principales.
 
 Las **sibilancias** son sonidos continuos, agudos y musicales. Se producen cuando el aire pasa por vías aéreas muy estrechas u obstruidas, y su frecuencia suele estar por encima de 100 Hz, pudiendo llegar a 1200 Hz o más.
 
 Los **roncus** son continuos pero graves, parecidos a un ronquido. Estas de deben a obstrucción o secreciones en las vías aéreas grandes, y están generalmente por debajo de 200 Hz.
 
-Los **crepitantes** son discontinuos y cortos, como burbujeo o velcro. Aparecen por la apertura brusca de vías aéreas colapsadas o por líquido en los alvéolos. Los finos están entre 650 y 1000 Hz; los gruesos suelen estar por debajo de 350 Hz.
+Los **crepitantes** son discontinuos y cortos, como un burbujeo. Aparecen por la apertura brusca de vías aéreas colapsadas o por líquido en los alvéolos. Los finos están entre 650 y 1000 Hz; los gruesos suelen estar por debajo de 350 Hz.
 
-¿Por qué esto importa para el modelo? Porque estas diferencias de frecuencia y duración son exactamente lo que una red puede aprender a distinguir en un espectrograma. Y también explica por qué más adelante filtro la señal entre 50 y 2000 Hz.
+¿Por qué esto importa para el modelo? Porque estas diferencias de frecuencia y duración son exactamente lo que una red puede aprender a distinguir en un espectrograma. Y también explica por qué más adelante el filtrado de la señal (entre 50 y 2000 Hz).
 
 ---
 
@@ -142,7 +141,7 @@ En los **sonidos adventicios**, el pulmón sano no tiene; en neumonía aparecen 
 
 En **frémito y resonancia vocal**, en neumonía el frémito está aumentado, con egofonía y broncofonía positivas. Y en la **percusión**, hay matidez sobre la consolidación (la matidez es el sonido sordo, débil y de breve duración que se percibe al realizar una percusión) 
 
-Lo importante: de estos cuatro hallazgos, el que el audio de un estetoscopio puede capturar es el de los sonidos, y de ahí sale la información que alimenta al modelo de audio.
+Lo importante: de estos cuatro hallazgos, el que el tanto el audio de un estoscopio digital como de un celular puede capturar los sonidos, y de ahí sale la información que alimenta al modelo de audio.
 
 ---
 
@@ -173,9 +172,9 @@ Estas imágenes también muestran la dificultad del problema: el patrón no siem
 
 Esta diapositiva conecta dos ideas.
 
-A la izquierda, la **pirámide de establecimientos de salud**: primer, segundo y tercer nivel. Mi proyecto apunta al **primer nivel**, resaltado en rojo en el nivel I-4, que es donde está la población rural y donde faltan especialistas y equipos. Por lo que el nivel de atención a la cual se quiere llegar para "apoyar" al personal de salud es el I-4 ya que es el tipo de establecimiento de salud de nivel mínimo de atención que tienen evaluación médica, instrumentación de auscultación de ruidos respiratorios y servicio de radiografía   *(Completa aquí tu justificación de por qué I-4, si la tienes.)*
+A la izquierda, la **los niveles de atencion de los establecimientos de salud**: primer, segundo y tercer nivel. Mi proyecto apunta al **primer nivel**, resaltado en rojo al nivel de atención a la cual se quiere llegar para "apoyar" al personal de salud es el I-4 ya que es el tipo de establecimiento de salud de nivel mínimo de atención que tienen evaluación médica, instrumentación de auscultación de ruidos respiratorios y servicio de radiografía.
 
-A la derecha, el marco de **inteligencia artificial**. El procesamiento de datos tiene cuatro etapas: dataset, preprocesamiento, **extracción de características** y división de datos. Resalté la extracción de características porque es donde ambos tipos de dato se transforman.
+A la derecha, el marco de **inteligencia artificial**, en el cual nuestro proyecto se va a dirigir al deeplearning que es un subconjunto del machine learning basado en redes neuronales artificiales con múltiples capas. El procesamiento de datos tiene cuatro etapas: dataset, preprocesamiento, **extracción de características** y división de datos. Resalté la extracción de características porque es donde ambos tipos de dato se transforman.
 
 Para **sonidos respiratorios**, las técnicas más usadas son coeficientes cepstrales en las frecuencias mel (MFCC), la no gaussianidad, la transformada de Fourier y la transformada wavelet. Para **radiografías**, se usan también MFCC, Fourier y wavelet, además de la matriz de ocurrencia de niveles de gris y el histograma de gradientes orientados. Estas técnicas son la base de la metodología que voy a mostrar más adelante.
 
@@ -255,7 +254,7 @@ Luego, el ciclo estándar de entrenamiento: función de pérdida, retropropagaci
 
 ### Bloque 3: implementación
 
-El sistema se desplegaría como app móvil o página web, con procesamiento local o en la nube, una guía de captura para quien no es especialista, y una alerta de referencia a un centro de mayor nivel. Recalco que es un **sistema de apoyo y no reemplaza el diagnóstico médico**. Después, monitoreo del desempeño en campo, de la calidad de los datos, y reentrenamiento con datos nuevos.
+El sistema se desplegaría como app móvil o página web, con procesamiento local o en la nube, y al igual que el 2do bloque aun no esta definido del todo, con solo nociones basicas. Recalco que es un **sistema de apoyo y no reemplaza el diagnóstico médico.**
 
 ---
 
